@@ -1,0 +1,110 @@
+
+@import './bootstrap/functions';
+@import './bootstrap/variables';
+
+
+.rounded-no, .border-no{
+    border-radius: 0;
+}
+
+a, button{
+    text-decoration: none !important;
+    &:hover{
+        text-decoration: none !important;
+    }
+}
+
+#accordion .card-header button{
+    display: block;
+}
+
+button[data-toggle="collapse"]{
+    .fa{
+        transition: $transition-base;
+        transform: rotate(90deg);
+    }
+
+    &.collapsed{
+        .fa{
+            transform: rotate(0);
+        }
+    }
+}
+
+.xxx{
+    strong, b{
+        color: rgba($dark, 0.8) !important;
+    }
+}
+
+.btn-info{
+    color: $white !important;
+}
+
+#navigation_sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: -100vw;
+    opacity: 0;;
+    transition: 0.7s;
+    z-index: -100;
+    bottom: 0;
+    background-color: rgba($black, 0.6);
+
+    &.opened{
+        left: 0;
+        opacity: 1;
+        z-index: 100;
+    }
+
+    &_content{
+        height: 100%;
+        width: 40%;
+        @media only screen and (max-width: $md){
+            width: 100%;
+        }
+        background-color: $white;
+        box-shadow: 0 0 8px 1px rgba($black, .1);
+    }
+}
+
+.lie{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hover-tran{
+    transition: $transition-base;
+    &:hover{
+        background-color: transparent !important;
+        color: $dark;
+    }
+}
+
+.block{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+header{
+    .bot{
+        ._nav{
+            &-item{
+                transition: 0.5s;
+                border-bottom: 2px solid transparent;
+                &.active{
+                    border-color: $success;
+                    >a{
+                        color: $success !important;
+                    }
+                }
+    
+                &:hover{
+                    @extend .active;
+                }
+            }
+        }
+    }
+}

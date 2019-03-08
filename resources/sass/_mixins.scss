@@ -1,0 +1,171 @@
+@mixin interract-1($background, $border) {
+    &:hover, &:focus {
+        background-color: darken($background, 7%);
+        border-color: darken($border, 7%);
+        @include b-shadow-1();
+    }
+}
+
+@mixin interract-img() {
+	&:hover, &:focus {
+        filter: brightness(.9);
+    }
+}
+
+@mixin b-shadow-1() {
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1) !important;
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1) !important;
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1) !important;
+}
+
+@mixin b-shadow-2() {
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.12) !important;
+  -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.12) !important;
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.12) !important;
+}
+
+// Mixin for shadow button with block sliding up
+@mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
+  $easing: $c_easeing_1;
+  
+  position: relative;
+
+  display: inline-block;
+  padding: 0.5em 2em;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+
+    height: $borderWidth;
+    width: 100%;
+
+    background-color: $color;
+  }
+
+  &:before {
+    top: 0;
+    @media (max-width: 991px) {
+    	display: none;
+    }
+  }
+
+  &:after {
+    bottom: 0;
+  }
+
+  &:hover, &.active {
+
+    & > * {
+
+      & > * {
+
+        &:before,
+        &:after {
+          transform: translate3d(0, 0, 0);
+        }
+
+        & > * {
+          &:before,
+          &:after {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+      }
+    }
+  }
+
+  & > * {
+
+    // &:before,
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+
+    //   height: 100%;
+    //   width: $borderWidth;
+
+    //   background-color: $color;
+    // }
+
+    &:before {
+      left: 0;
+      @media (max-width: 991px) {
+	    	display: none;
+	    }
+    }
+
+    &:after {
+      right: 0;
+    }
+
+    & > * {
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        z-index: 9;
+
+        height: $borderWidth;
+        width: 100%;
+
+        background-color: $hoverColor;
+      }
+
+      &:before {
+        top: 0;
+
+        transform: translate3d(-105%, 0, 0);
+        transition: transform $time $easing;
+        @media (max-width: 991px) {
+	    	display: none;
+	    }
+      }
+
+      &:after {
+        bottom: 0;
+        
+        transform: translate3d(105%, 0, 0);
+        transition: transform $time $easing;
+      }
+
+      & > * {
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          z-index: 9;
+
+          height: 100%;
+          width: $borderWidth;
+
+          background-color: $hoverColor;
+        }
+
+        &:before {
+          left: 0;
+
+          transform: translate3d(0, 105%, 0);
+          transition: transform $time $easing;
+        }
+
+        &:after {
+          right: 0;
+
+          transform: translate3d(0, -105%, 0);
+          transition: transform $time $easing;
+        }
+      }
+    }
+  }
+}
