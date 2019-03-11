@@ -49,7 +49,7 @@
 				</div>
 				<div class="footer-cc row m-0">
 					<div class="col-12 col-lg-9 p-0">
-						<p> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+						<p> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
 					</div>
 					
 				</div>
@@ -57,30 +57,32 @@
 			<div class="col-12 col-lg-3 pl-lg-0 my-4 my-lg-0">
 				<div class="footer-registration">
 					<h5 class="">Sign up today for free consultation</h5>
-					<form>
+					
+					<form class ='register_form' method="POST" action="{{ route('register') }}">
+						@csrf
 						<div class="form-group mb-4">
-						    <input type="text" class="form-control"  placeholder="Full Name" name="name">
+						    <input type="text" class="form-control"  placeholder="Full Name" name="name" required>
 						</div>
 						<div class="form-group mb-4">
-						    <input type="text" class="form-control"  placeholder="Phone Number" name="phone">
+						    <input type="text" class="form-control"  placeholder="Phone Number" name="phone" required>
 						</div>
 						<div class="form-group mb-4">
-						    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="E-Mail">
+						    <input type="email" class="form-control" aria-describedby="emailHelp" name ='email' placeholder="E-Mail" required>
 						</div>
 						<div class="form-group mb-4">
-						    <select class="custom-select form-control" name="education_level" required="">
-	                            <option selected disabled>Level of Education</option>
+						    <select class="custom-select form-control" name="education_level"  required>
+	                            <option value  selected disabled>Level of Education</option>
 	                            <option value="Primary School">Primary School</option>
 	                            <option value="High School (No diploma)">High School (No diploma)</option>
 	                            <option value="Vocational School">Vocational School</option>
-	                            <option value="Bachelor's degree">Bachelor's degree</option>
-	                            <option value="Master's degree">Master's degree</option>
+	                            <option value="Bachelor's degree">Bachelors degree</option>
+	                            <option value="Masters degree">Masters degree</option>
 	                            <option value="PhD">PhD</option>
 	                        </select>
 						</div>
 						<div class="form-group mb-4">
-						    <select class="custom-select form-control" name="work_position">
-                                <option selected disabled>What is you current position?</option>
+						    <select class="custom-select form-control" name="work_position" required>
+                                <option value selected disabled>What is you current position?</option>
                                 <option value="Accountant">Accountant</option>
                                 <option value="Advertisement">Advertisement</option>
                                 <option value="Architect">Architect</option>
@@ -121,7 +123,7 @@
                             </select>
 						</div>
 						<div class="form-group mb-4">
-						    <select class="custom-select form-control" name="monthly_income" required="">
+						    <select value class="custom-select form-control" name="monthly_income" required>
                                 <option selected disabled>Income</option>
                                 <option value="$1,501 - $3,000">$1,501 - $3,000</option>
                                 <option value="$3,001 - $5,000">$3,001 - $5,000</option>
@@ -129,16 +131,42 @@
                             </select>
 						</div>
 						<div class="form-group mb-4">
-						    <select class="custom-select form-control" name="alone_wfamily" required="">
+						    <select value class="custom-select form-control" name="alone_wfamily"  required >
                                 <option selected disabled>Alone or with family?</option>
                                 <option value="Alone">Alone</option>
                                 <option value="With family">With family</option>
                              </select>
 						</div>
-						<button type="submit" class="c-button c-color-1 w-100 hvr-shutter-out-vertical hover-c-color-1"><span>Register</span></button>
+						<button type="submit" class="c-button c-color-1 w-100 hvr-shutter-out-vertical hover-c-color-1 register_button"><span>Register</span></button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </footer>
+
+
+<script>
+	$(document).ready(function(){
+		$('.register_form').on('submit' , function(e){
+			e.preventDefault();
+
+			var register_form = $('.register_form').serialize();
+
+			$.ajax({
+				headers: {
+					'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+				  },
+	  
+				  method: 'POST',
+				  url: $(this).attr('action'),
+				  data: register_form,
+				  success: function(data)
+				  {
+					window.location.reload();
+				  }
+	
+				});
+		});
+		
+</script>
