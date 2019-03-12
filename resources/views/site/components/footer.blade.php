@@ -23,7 +23,7 @@
 					</div>
 				</div>
 				<div class="footer-payment row m-0 py-1 py-lg-3">
-					<a class="footer-logo-wrapper col-12 col-lg-3 py-4 px-0" href="">
+					<a class="footer-logo-wrapper col-12 col-lg-3 py-4 px-0" href="{{ route('page', '') }}">
 			            <img class="" src="{{ asset('images/logo_white.svg') }}">
 			        </a>
 			        <div class="col-12 col-lg-7 justify-content-end d-lg-flex px-0">

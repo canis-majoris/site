@@ -1,7 +1,7 @@
 <header>
     <div class="container-fluid d-none d-lg-block">
         <div class="sub-header row d-flex justify-content-between align-items-center px-4">
-            <a class="header-logo-wrapper col-5 col-md-3 col-lg-3 pt-2" href="">
+            <a class="header-logo-wrapper col-5 col-md-3 col-lg-3 pt-2" href="{{ route('page', '') }}">
                 <img src="{{ asset('images/logo.svg') }}">
             </a>
             <div class="header-auth-wrapper justify-content-end">

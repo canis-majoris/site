@@ -131,6 +131,7 @@
                 </div>
             </div>
 		</section>
+        @include('site.components.s4')
 	</main>
 
 @endsection
