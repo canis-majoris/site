@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Page;
+use App\PageTranslated;
 
 class PagesController extends Controller
 {
@@ -11,8 +13,8 @@ class PagesController extends Controller
     	switch ($page) {
     		case '':
     		case 'home': 			 $page_view = 'site.pages.home'; break;
-    		case 'charts-page': 	 $page_view = 'site.pages.charts-page'; break;
-    		case 'commission-plans': $page_view = 'site.pages.commission-plans'; break;
+    		case 'work-permit': 	 $page_view = 'site.pages.work-permit'; break;
+    		case 'Manitoba':         $page_view = 'site.pages.manitoba'; break;
     		case 'contact-us': 		 $page_view = 'site.pages.contact-us'; break;
     		case 'faq': 			 $page_view = 'site.pages.faq'; break;
     		case 'marketing-tools':  $page_view = 'site.pages.marketing-tools'; break;

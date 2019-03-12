@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'bpg_arial_2009';
+    src: url('bpg_arial/bpg_arial_2009.eot');
+    src: url('bpg_arial/bpg_arial_2009.eot') format('embedded-opentype'),
+         url('bpg_arial/bpg_arial_2009.woff2') format('woff2'),
+         url('bpg_arial/bpg_arial_2009.woff') format('woff'),
+         url('bpg_arial/bpg_arial_2009.ttf') format('truetype'),
+         url('bpg_arial/bpg_arial_2009.svg#bpg_arial_2009') format('svg');
+}

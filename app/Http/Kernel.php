@@ -58,11 +58,18 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'auth_custom' => \App\Http\Middleware\AuthenticateCustom::class,
+        'auth_admin' => \App\Http\Middleware\AuthenticateAdmin::class,
         'guest_custom' => \App\Http\Middleware\RedirectIfAuthenticatedCustom::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'locale' => \App\Http\Middleware\Locale::class
+        'locale' => \App\Http\Middleware\Locale::class,
+
+        'role' => \Zizaco\Entrust\Middleware\EntrustRole::class,
+        'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
+        'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
+
+        'is_admin' => \App\Http\Middleware\IsAdmin::class,
     ];
 
     /**

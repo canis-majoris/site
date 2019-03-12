@@ -1,0 +1,3 @@
+<div class="stat_item custom-badge-1 deep-purple white-text lighten-3" style="display: inline-block;">Зарегистрированных всего: <b style="font-size: 20px; margin-left: .5rem;">{{ $dealer_users }}</b></div>
+<div class="stat_item custom-badge-1 deep-purple white-text lighten-3" style="display: inline-block;">Cумма оборота группы: <b style="font-size: 20px; margin-left: .5rem;"> @if($sum) {{ $currency->sign . $sum }} @else 0 @endif</b></div>
+<div class="stat_item custom-badge-1 white grey-text right" style="display: inline-block; margin-right: .75rem;">Cчет: <b style="font-size: 20px; margin-left: .5rem;" class="custom-accent-2">{{ $currency->sign . number_format((float)$user->score, 2, '.', '') }}</b></div>

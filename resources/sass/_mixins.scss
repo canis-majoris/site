@@ -24,6 +24,13 @@
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.12) !important;
 }
 
+@mixin c-transition($speed) {
+  -webkit-transition: all #{$speed}s $c_easeing_1;
+    -moz-transition: all #{$speed}s $c_easeing_1;
+    -o-transition: all #{$speed}s $c_easeing_1;
+    transition: all #{$speed}s $c_easeing_1;
+}
+
 // Mixin for shadow button with block sliding up
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
   $easing: $c_easeing_1;
@@ -59,26 +66,26 @@
     bottom: 0;
   }
 
-  &:hover, &.active {
+  // &:hover, &.active {
 
-    & > * {
+  //   & > * {
 
-      & > * {
+  //     & > * {
 
-        &:before,
-        &:after {
-          transform: translate3d(0, 0, 0);
-        }
+  //       &:before,
+  //       &:after {
+  //         transform: translate3d(0, 0, 0);
+  //       }
 
-        & > * {
-          &:before,
-          &:after {
-            transform: translate3d(0, 0, 0);
-          }
-        }
-      }
-    }
-  }
+  //       & > * {
+  //         &:before,
+  //         &:after {
+  //           transform: translate3d(0, 0, 0);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   & > * {
 

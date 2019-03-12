@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'brush_script_georgian';
+    src: url('brush_geo/brush_script_georgian.eot');
+    src: url('brush_geo/brush_script_georgian.eot') format('embedded-opentype'),
+         url('brush_geo/brush_script_georgian.woff2') format('woff2'),
+         url('brush_geo/brush_script_georgian.woff') format('woff'),
+         url('brush_geo/brush_script_georgian.ttf') format('truetype'),
+         url('brush_geo/brush_script_georgian.svg#brush_script_georgian') format('svg');
+}
