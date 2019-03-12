@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse justify-content-center px-2" id="main-navigation">
             <div class="header-auth-wrapper justify-content-end d-flex d-lg-none mt-4">
               <div class="col-12 p-0">
-                <button type="button" class="c-button c-color-1 flat mx-0 w-100 my-2 text-white"><span>Log in</span></button>
+                <button type="button" class="c-button c-color-1 flat mx-0 w-100 my-2 text-white login-trigger"><span>Log in</span></button>
                 <button type="button" class="c-button c-color-1 mx-0 w-100 my-2"><span>Sign up</span></button>
               </div>
                 

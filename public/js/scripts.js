@@ -81,7 +81,7 @@
     };
 
     //Just pass the jQuery object
-    //background_image_parallax($(".parallax-1"));
+    // background_image_parallax($(".parallax-1"));
 
 	function debouncer( func , timeout ) {
 	   var timeoutID , timeout = timeout || 200;

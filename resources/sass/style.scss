@@ -97,7 +97,7 @@ header {
     		border: none;
     		border-radius: 0;
     		margin: 0;
-    		background-color: $main_1_080;
+    		background-color: $main_1_090;
     		padding: 0;
     		transition: all .3s $c_easeing_1;
     		visibility: hidden;
@@ -677,6 +677,10 @@ main {
 			background-size: cover;
 		    position: relative;
 
+		    @media (max-width: 991px) {
+		    	padding-bottom: 35rem;
+		    }
+
 		    .banner-wrapper {
 		    	align-items: center!important;
 		    	vertical-align: middle;
@@ -687,6 +691,92 @@ main {
 		    	bottom: 0;
 		    	left: 0;
 		    	right: 0;
+
+		    	.banner{
+		    		position: relative;
+	    			display: flex;
+				    justify-content: center;
+				    align-items: center;
+				    max-width: 100vw;
+
+				    @media (max-width: 991px) {
+				    	width: 100%;
+				    	display: block;
+				    	text-align: center;
+				    }
+
+		    		&::before {
+		    			content: '';
+		    			// position: absolute;
+		    			// top: 0;
+		    			// left: 0;
+		    			display: flex;
+		    			width: 278px;
+		    			padding-bottom: 278px;
+		    			background-position: center;
+		    			background-size: contain;
+		    			background-repeat: no-repeat;
+		    			background-image: url(../images/top_1.png);
+
+		    			@media (max-width: 991px) {
+					    	margin: 0 auto;
+				    	}
+		    		}
+
+		    		.banner-image {
+		    			position: absolute;
+			    		background-position: calc(4.5rem) calc(50% + 1rem);
+	    				background-size: 8.5rem;
+		    			background-repeat: no-repeat;
+		    			left: 0;
+					    width: 278px;
+					    height: 278px;
+		    			display: flex;
+					    justify-content: center;
+					    align-items: center;
+					    z-index: 9;
+
+					    @media (max-width: 991px) {
+					    	top: 0;
+					    	width: 100%;
+					    	background-position: center calc(50% + 1rem);
+				    	}
+		    		}
+
+		    		.banner-name {
+		    			left: 0;
+					    display: flex;
+					    width: 19rem;
+					    padding: .5rem;
+					    min-height: 4.5rem;
+					    align-items: center;
+					    justify-content: center;
+					    vertical-align: middle;
+					    font-weight: 900;
+					    font-size: 25pt;
+					    text-transform: capitalize;
+					    background-color: #fff;
+					    margin-left: -5rem;
+					    position: relative;
+					    z-index: 8;
+
+					    @media (max-width: 991px) {
+					    	margin-left: -2rem;
+					    	margin-top: 2rem;
+    						margin-bottom: 4rem;
+				    	}
+
+					    &::after {
+					    	content: "";
+						    position: absolute;
+						    right: -4.495rem;
+						    border-left: 0 solid transparent;
+						    border-right: 4.5rem solid transparent;
+						    border-top: 4.5rem solid #fff;
+
+					    }
+		    		}
+		    	}
 		    }
 		}
 	}
@@ -703,7 +793,7 @@ main {
 	    	padding-bottom: 30%;
 	    	position: relative;
 			background-position: center;
-			background-repeat: no-repeat;
+			// background-repeat: no-repeat;
 			background-size: cover;
 			background-attachment: fixed;
 			min-height: 25rem;
@@ -769,36 +859,41 @@ main {
 	}
 
 	.c-v-list {
-		text-align: center;
+		text-align: left;
+		margin: 2rem 0;
 
 		.c-list-item {
-			border-bottom: 2px solid $accent_1;
+			border-left: 2px solid $accent_1;
 			position: relative;
 			display: flex;
 			align-items: center;
-    		justify-content: center;
-    		padding: 2rem;
-		    font-size: 11pt;
+    		justify-content: left;
+    		padding: 2rem calc(3rem + 2vw);
+		    font-size: 12pt;
 		    font-weight: 700;
-		    margin: 2rem 0;
+		    margin: 0 1.5rem;
 		    color: #000;
+		    text-align: left;
 
 			&::after {
-				content: '\2713';
+				content: '';
+				background-image: url(../images/tick_1.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
 				display: flex;
 			    align-items: center;
 			    vertical-align: middle;
 			    justify-content: center;
-				padding: .25rem;
-				width: 20px;
-				height: 20px;
-				border-radius: 3rem;
-				border: 1px solid $accent_1;
+				// padding: .25rem;
+				width: 54px;
+    			height: 47px;
+				// border-radius: 3rem;
+				// border: 1px solid $accent_1;
 				position: absolute;
-				bottom: -10px;
-				background-color: #fff;
-				left: 0;
-				right: 0;
+				// background-color: #fff;
+				left: -19px;
+				z-index: 999;
 				margin: 0 auto;
 				color: $accent_1;
 			}
@@ -1011,6 +1106,13 @@ footer {
 .iziModal {
 	z-index: 999999 !important;
 	border-radius: 0 !important;
+
+	@media (max-width: 991px) {
+    	max-width: 95% !important;
+    }
+	
+	// margin-left: .5rem !important;
+ //    margin-right: .5rem !important;
 
 	.icon-close {
 		position: absolute;

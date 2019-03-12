@@ -1,10 +1,10 @@
  <!-- Modal structure -->
 <div id="modal" style="display: none;">
 	<button data-izimodal-close="" class="icon-close"><i class="fa fa-times" aria-hidden="true"></i></button>
-	<div class="p-5">
-	    <header class="pb-4">
+	<div class="px-4 py-5 px-lg-5 py-lg-5">
+	    <div class="pb-4">
 	        <h4>Sign In</h4>
-	    </header>
+	    </div>
 	    <div class="sections">
 	    	<form class="login-form row" id="popup_account">
 	    		<div class="form-group col-12">
