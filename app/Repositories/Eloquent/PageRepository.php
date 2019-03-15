@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
-use App\Language;
-use App\Page;
-// use App\PageType;
-use App\PageLanguage;
-use App\Region;
+use App\Models\Language;
+use App\Models\Page\Page;
+use App\Models\Page\PageType;
+use App\Models\Page\PageLanguage;
+use App\Models\Region;
 use Config;
 use Image;
 
@@ -189,7 +189,7 @@ class PageRepository extends BaseRepository implements PageInterface  {
 
             if ($id) {
                 $item = $this->getByid($id);
-                $translated = $item->getTranslatedByLanguageId($language_id, ['language_id', 'name', 'seo_title', 'seo_keywords', 'seo_description', 'img', 'alt', 'text', 'watch', 'video', 'created_at', 'updated_at']);
+                $translated = $item->getTranslatedByLanguageId($language_id, ['language_id', 'name', 'seo_title', 'seo_keywords', 'seo_description', 'img', 'alt', 'text', 'status', 'video', 'created_at', 'updated_at']);
 
                 $uploaded_img = $item->translated()->where('img', '!=', '')->whereNotNull('img')->count();
 
@@ -224,10 +224,10 @@ class PageRepository extends BaseRepository implements PageInterface  {
         $arr['name_trans']             = (isset($data["name_trans"]) ? $data["name_trans"] : null);
         $arr['method']                 = (isset($data["method"]) ? $data["method"] : null);
         $arr['is_text']                = (isset($data["is_text"]) && $data["is_text"] == "on") ? 1 : 0;
-        $arr['watch']                  = (isset($data["watch_global"]) && $data["watch_global"] == "on") ? 1 : 0;
+        $arr['status']                  = (isset($data["status_global"]) && $data["status_global"] == "on") ? 1 : 0;
         $arr['tags']                   = (isset($data["tags"]) ? json_encode($data["tags"]) : "");
         $arr['parent_id']              = (isset($data['parent_id']) && $data['parent_id'] != null) ? $data['parent_id'] : null;
-        $update_arr['watch']           = (isset($data["watch"]) && $data["watch"] == "on") ? 1 : 0;
+        $update_arr['status']           = (isset($data["status"]) && $data["status"] == "on") ? 1 : 0;
         $update_arr['video']           = isset($data["video"]) ? $data["video"] : null;
         $update_arr['text']            = isset($data["text"]) ? $data["text"] : null;
         $update_arr['alt']             = isset($data["alt"]) ? $data["alt"] : null;
@@ -339,12 +339,12 @@ class PageRepository extends BaseRepository implements PageInterface  {
         foreach ($ids as $id) {
 
             $item = $this->getById($id);
-            $item->watch = ( $item->watch == 1 ? 0 : 1 );
+            $item->status = ( $item->status == 1 ? 0 : 1 );
 
             if ($result = $item->save()) {
 
                 $errors .= ($result['errors'] ? $result['errors'] : '');
-                $status = $item->watch;
+                $status = $item->status;
 
             }
 

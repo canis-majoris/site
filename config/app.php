@@ -171,6 +171,9 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Yajra\DataTables\DatatablesServiceProvider::class,
+        Yajra\DataTables\ButtonsServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -235,6 +238,7 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Datatables' => Yajra\DataTables\Facades\DataTables::class
     ],
 
 ];

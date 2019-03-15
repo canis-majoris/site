@@ -8,10 +8,13 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
-use App\Language;
-use App\Country;
-use App\Gallery;
-use App\GalleryType;
+use App\Models\Tvoyo\User;
+use App\Models\Product\Product;
+use App\Models\Language;
+use App\Models\Country;
+use App\Models\Region;
+use App\Models\Gallery\Gallery;
+use App\Models\Gallery\GalleryType;
 use Config;
 use Image;
 
@@ -21,8 +24,8 @@ class MediaRepository extends BaseRepository implements MediaInterface  {
 	 * @param Discount
 	 */
 	public function __construct(Gallery $model, GalleryType $model_type) {
-		$this->model = $model;
-		$this->model_type = $model_type;
+		$this->model = $model->filterRegion(false);
+		$this->model_type = $model_type->filterRegion(false);
 	}
 
 	/**
@@ -178,7 +181,7 @@ class MediaRepository extends BaseRepository implements MediaInterface  {
 
 	            if ($translated) {
 
-	            	$image_names_arr = json_decode($translated->img, 1);
+	            	$image_names_arr = json_decode($translated->img, 1) ?? [];
 		            $gallery_items = $this->model->whereIn('img', $image_names_arr)->get();
 
 	            }

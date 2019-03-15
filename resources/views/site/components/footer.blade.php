@@ -10,6 +10,7 @@
 					<div class="col-12 col-md-6 col-lg-3"><a href="#" class="item hvr-underline-from-left">employment</a></div>
 					<div class="col-12 col-md-6 col-lg-3"><a href="#" class="item hvr-underline-from-left">study in canada</a></div>
 					<div class="col-12 col-md-6 col-lg-3"><a href="#" class="item hvr-underline-from-left">about canada</a></div>
+					<div class="col-12 col-md-6 col-lg-3"><a href="{{ route('page', 'terms_and_conditions') }}" class="item hvr-underline-from-left">terms & conditions</a></div>
 				</div>
 				<div class="footer-contact row py-2 py-lg-4 m-0">
 					<div class="col-12 col-lg-4 item my-2 pl-0">

@@ -45,7 +45,7 @@ Route::prefix('admin')->group(function() {
 	Route::middleware('guest')->group( function() {
 
 		//dd('test');
-		Route::any('/', array('as' => 'home-index', 'uses' => 'Admin\AuthController@index'));
+		Route::any('/', array('as' => 'home-index', 'uses' => 'Admin\ChartsPageController@index'));
 		Route::get('/logout', ['as' => 'logout-post', 'uses' => 'Admin\AuthController@postLogout']);
 		Route::resource('admins', 'AdminController');
 		//Route::post('/admins/assignrole', ['as' => 'admin-assign-role', 'uses' => 'AdminController@assignRole']);
@@ -380,7 +380,7 @@ Route::prefix('admin')->group(function() {
 		Route::post('pagestypes/update', ['middleware' => ['permission:textstypes-update'], 'as' => 'pages_types-update', 'uses' => 'PageTypeController@update']);
 		Route::post('pagestypes/load-settings', ['as' => 'pages_types-load_settings', 'uses' => 'PageTypeController@loadPageTypeSettings']);
 
-		Route::any('pages', ['middleware' => ['permission:pages'], 'as' => 'pages.index', 'uses' => 'Admin\PageController@index']);
+		Route::any('pages', [/*'middleware' => ['permission:pages'],*/ 'as' => 'pages.index', 'uses' => 'Admin\PageController@index']);
 		Route::any('pages/new', ['middleware' => ['permission:pages-create'], 'as' => 'pages-new', 'uses' => 'Admin\PageController@update']);
 		Route::any('pages/edit', ['middleware' => ['permission:pages-edit'], 'as' => 'pages-edit', 'uses' => 'Admin\PageController@update']);
 		Route::post('pages/save', ['middleware' => ['permission:pages-update'], 'as' => 'pages-save', 'uses' => 'Admin\PageController@save']);

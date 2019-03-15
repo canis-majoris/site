@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.8"
     },
     "dependencies": {
+        "admin-lte": "^3.0.0-alpha.2",
         "hover.css": "^2.3.2",
         "owl.carousel": "^2.3.4"
     }

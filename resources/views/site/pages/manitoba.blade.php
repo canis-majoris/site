@@ -6,11 +6,13 @@
 
 	<main>
 		<section id="top">
-			<div class="page-banner-container parallax-1" style="background-image: url({{ asset('/images/manitoba_h.png') }});" >
+			<div class="page-banner-container no-pseudo" style="background-image: url({{ asset('/images/manitoba_h.png') }});" >
 				<div class="banner-wrapper" data-aos="fade-up">
                     <div class="banner">
                         <div class="banner-image" style="background-image: url({{ asset('/images/manitoba_i.png') }});"></div>
-                        <div class="banner-name">manitoba</div>
+                        <div class="col">
+                            <div class="banner-name justify-content-start px-5">manitoba</div>
+                        </div>
                     </div>    
                 </div>
 			</div>
@@ -83,7 +85,7 @@
                                     <div class="c-list-item" data-aos="fade-right">
                                         <div class="header"><span>Cities</span></div>
                                         <div class="content">
-                                            <h2>Winnipeg</h2>
+                                            <h3 class="c-title-1">Winnipeg</h3>
                                             <p>Representatives of different nationalities live in the city, which defines the diversity of local culture and the friendliness of the indigenous people. There is "Chinatown" in Winnipeg and quarter called "Little Italy", and the French district - each of them has its own unique atmosphere. All travelers who have ever visited Winnipeg, note friendly spirit of local population. Literally, it is seen in everything, even car numbers have inscription "friendly Winnipeg", which makes newcomers smile and feel themselves as at home.
                                             The windiest point in the world is right in this city. It is located at the intersection of Portage and Main streets, the wind is always strong, even if the weather is calm and quiet. Winnipeg keeps amazing its visitors with unusual holidays and sights. The culture of this city is diverse and very interesting.</p>
 

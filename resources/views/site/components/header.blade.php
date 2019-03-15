@@ -76,16 +76,16 @@
                                 <a href="{{ route('page', 'Provincial nominee program updates') }}">Provincial nominee program updates</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="{{ route('page', 'Alberta') }}">Alberta</a>
+                                <a href="{{ route('page', 'albertia') }}">Alberta</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="{{ route('page', 'British Columbia') }}">British Columbia</a>
+                                <a href="{{ route('page', 'british_columbia') }}">British Columbia</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="{{ route('page', 'Manitoba') }}">Manitoba</a>
+                                <a href="{{ route('page', 'manitoba') }}">Manitoba</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="{{ route('page', 'New Brunswick') }}">New Brunswick</a>
+                                <a href="{{ route('page', 'new_brunswick') }}">New Brunswick</a>
                             </li>
                             <li class="dropdown-item">
                                 <a href="{{ route('page', 'New Foundland and Labrador') }}">New Foundland and Labrador</a>
@@ -94,7 +94,7 @@
                                 <a href="{{ route('page', 'Northwest territories') }}">Northwest territories</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="{{ route('page', 'Nova Scotia') }}">Nova Scotia</a>
+                                <a href="{{ route('page', 'nova_scotia') }}">Nova Scotia</a>
                             </li>
                             <li class="dropdown-item">
                                 <a href="{{ route('page', 'Ontario') }}">Ontario</a>
@@ -114,28 +114,28 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Quebec Immigration</a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-item">
-                                <a href="#">Quebec Skilled Worker Program</a>
+                                <a href="{{ route('page', 'quebec_skilled_workers') }}">Quebec Skilled Worker Program</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="#">Enterpreneur program</a>
+                                <a href="{{ route('page', 'quebec_immigration_program_for_businessman') }}">Enterpreneur program</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="#">Quebec Experience class</a>
+                                <a href="{{ route('page', 'quebec_experience_class') }}">Quebec Experience class</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="#">Working in Quebec</a>
+                                <a href="{{ route('page', 'working_in_quebec') }}">Working in Quebec</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="#">Studying in Quebec</a>
+                                <a href="{{ route('page', 'study_in_quebec') }}">Studying in Quebec</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="#">Quebec Enterpreneur  Program</a>
+                                <a href="{{ route('page', 'quebec_enterpreneur_porogram') }}">Quebec Enterpreneur Program</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="#">Quebec Investor Program</a>
+                                <a href="{{ route('page', 'quebec_investor_program') }}">Quebec Investor Program</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="#">Quebec Self-Employed Programs</a>
+                                <a href="{{ route('page', 'quebec_self_employed_program') }}">Quebec Self-Employed Programs</a>
                             </li>
                         </ul>
                     </li>
@@ -156,15 +156,6 @@
                             </li>
                             <li class="dropdown-item">
                                 <a href="#">Buy a Business</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#">Quebec Enterpreneur  Program</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#">Quebec Investor Program</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#">Quebec Self-Employed Programs</a>
                             </li>
                         </ul>
                     </li>
@@ -296,22 +287,25 @@
                   </a>
                   <ul class="dropdown-menu">
                     <li class="dropdown-item">
-                        <a href="#">Canadian Dream</a>
+                        <a href="{{ route('page', 'canadian_dream') }}">Canadian Dream</a>
                     </li>
                     <li class="dropdown-item">
-                        <a href="#">Canadian Economy</a>
+                        <a href="{{ route('page', 'canadian_economy') }}">Canadian Economy</a>
                     </li>
                     <li class="dropdown-item">
-                        <a href="#">Healthcare in Canada</a>
+                        <a href="{{ route('page', 'health_in_canada') }}">Healthcare in Canada</a>
                     </li>
                     <li class="dropdown-item">
-                        <a href="#">Raising children in Canada</a>
+                        <a href="{{ route('page', 'rising_children') }}">Raising children in Canada</a>
                     </li>
                     <li class="dropdown-item">
-                        <a href="#">Banking in Canada</a>
+                        <a href="{{ route('page', 'banking_in_canada') }}">Banking in Canada</a>
                     </li>
                     <li class="dropdown-item">
-                        <a href="#">Canadian citizenship</a>
+                        <a href="{{ route('page', 'canadian_citizenship') }}">Canadian citizenship</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="{{ route('page', 'canadian_experience_program') }}">Canadian Experience Program</a>
                     </li>
                     <li class="dropdown-item">
                         <a href="#">Articles</a>

@@ -21,12 +21,6 @@
                 <li>
                     <a href="javascript:void(0)" class="dropdown-button" data-activates='header_main-dropdown'><i class="material-icons">more_vert</i></a>
                     <ul id='header_main-dropdown' class='dropdown-content'>
-                        <li><a href="http://tvoyo.tv" target="_blank">TVOYO.TV</a></li>
-                        <li><a href="http://usa.tvoyo.tv" target="_blank">USA.TVOYO.TV</a></li>
-                        <li><a href="http://kz.tvoyo.tv" target="_blank">KZ.TVOYO.TV</a></li>
-                        <li><a href="http://am.tvoyo.tv" target="_blank">AM.TVOYO.TV</a></li>
-                        <li><a href="http://test.tvoyo.tv" target="_blank">TEST.TVOYO.TV</a></li>
-                        <li class="divider"></li>
                         {{-- <li><a class="waves-effect waves-grey" href=""><i class="material-icons">account_box</i>{{trans('dashboard.sidebar.admin.list.profile')}}</a></li> --}}
                         <li><a class="waves-effect waves-grey" href="{{route('logout-post')}}"><i class="material-icons">exit_to_app</i>{{trans('dashboard.sidebar.admin.list.sign_out')}}</a></li>
                     </ul>

@@ -26,7 +26,7 @@
                         <span>{{ trans('main.image_upload.preview') }}<span>
                     </div>
                     <div id="image_form" class="loading-block">
-                        @include('pages.parts.image')
+                        @include('admin.pages.parts.image')
                     </div>
                 </div>
             </div>

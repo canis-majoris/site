@@ -52,7 +52,7 @@
             $loggedIn = 'loggedin';
         }
     @endphp
-    <body class="bg-white <?=$loggedIn?>">
+    <body class="<?=$loggedIn?>">
         @include('site.components.header')
 
         @yield('content')

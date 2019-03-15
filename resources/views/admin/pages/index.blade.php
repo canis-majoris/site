@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('admin.layout.main')
 
 @section('title', 'Admin - Pages')
 
@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/rowreorder/1.2.0/css/rowReorder.dataTables.min.css" rel="stylesheet">
 <link href="{{ URL::asset('admin_assets/plugins/select2/css/select2.css') }}" rel="stylesheet"> 
-<script src="{{ URL::asset('plugins/js/masonry.pkgd.min.js') }}"></script>
+<script src="{{ URL::asset('admin_assets/js/masonry.pkgd.min.js') }}"></script>
 
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <!-- or -->
@@ -60,7 +60,7 @@
                             <div class="col s12">
                                 <div class="">
                                     <div id="menu_items-container" style="margin: 0 -22px; padding: 20px 0;" class="side-menu-items-wrapper">
-                                        @include('pages.parts.form_right')
+                                        @include('admin.pages.parts.form_right')
                                     </div>
                                     <input type="hidden" name="current_menu_item_id" id="current_menu_item_id" class="current-side-menu-item-id">
                                 </div>

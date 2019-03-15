@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
+
 use App\Repositories\Eloquent\MediaRepository;
 use App\Repositories\Eloquent\LanguageRepository;
 use App\Repositories\Eloquent\PageRepository;
@@ -15,14 +16,14 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
-use App\User;
-use App\Language;
-use App\Region;
-use App\PageType;
-use App\Page;
-use App\PageLanguage;
-use App\Gallery;
-use App\GalleryType;
+use App\Models\User;
+use App\Models\Language;
+use App\Models\Region;
+use App\Models\Page\PageType;
+use App\Models\Page\Page;
+use App\Models\Page\PageLanguage;
+use App\Models\Gallery\Gallery;
+use App\Models\Gallery\GalleryType;
 use Validator;
 use Config;
 
@@ -34,7 +35,7 @@ class PageController extends MediaController {
     public function __construct( MediaRepository $media, PageRepository $page, LanguageRepository $language ) {
         parent::__construct($media);
         $this->item = $page;
-        $this->view_directory = 'pages';
+        $this->view_directory = 'admin.pages';
         $this->page = $page;
         $this->language = $language;
     }
@@ -46,18 +47,11 @@ class PageController extends MediaController {
      */
     public function index(PagesDataTable $dataTable) {
         $languages = $this->language->getAll();
-        $regions = Region::get();
         $menu_items = [];
-
-        if ($regions->count()) {
-
-            $menu_items = $this->page->getTypes();
-
-        }
 
         $language_id = $languages->first()->id;
         
-        return $dataTable->render('pages.index', compact('menu_items', 'languages', 'language_id'));
+        return $dataTable->render('admin.pages.index', compact('menu_items', 'languages', 'language_id'));
 
     }
 
@@ -90,7 +84,7 @@ class PageController extends MediaController {
             $current_menu_item_id = $result['parent_item'] != null ? $result['parent_item']->id : null;
             $add_item_to_parent = $result['add_item_to_parent'];
 
-            $view = View::make('pages.manage.form', $result)->render();
+            $view = view('admin.pages.manage.form', $result)->render();
 
             return response()->json(['success' => true, 'status' => 1, 'message' => 'new content', 'html' => $view, 'response' => ['current_menu_item_id' => $current_menu_item_id, 'add_item_to_parent' => $add_item_to_parent]]);
         }

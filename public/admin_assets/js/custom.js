@@ -667,6 +667,8 @@ var delay = (function(){
 })();
 
 var animation_resize = function () {
+
+    
     //var elements = $('.animate-c');
     new ResizeSensor($('.animate-c'), function(){ 
         var active_child = $('.animate-c-wrapper').find('.animate-c.visible-c');

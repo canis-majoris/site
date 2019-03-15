@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <!-- Title -->
-        <title>TVOYO TV Admin</title>
+        <title>Administration Panel</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
@@ -20,7 +20,7 @@
         <link href="{{ URL::asset('admin_assets/plugins/fullcalendar/fullcalendar.min.css') }}" rel="stylesheet"> 
         <link href="{{ URL::asset('admin_assets/plugins/nvd3/nv.d3.min.css') }}" rel="stylesheet">  
         <link href="{{ URL::asset('admin_assets/plugins/datatables/css/jquery.dataTables.css') }}" rel="stylesheet">  
-        <link href="{{ URL::asset('plugins/sweetalert2-7.17.0/dist/sweetalert2.css') }}" rel="stylesheet">  
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" rel="stylesheet">  
         <link href="{{ URL::asset('admin_assets/plugins/select2/css/select2.css') }}" rel="stylesheet">
         <link href="{{ URL::asset('admin_assets/plugins/bgrins-spectrum/spectrum.css') }}" rel="stylesheet">
         <link href="{{ URL::asset('admin_assets/plugins/dropzone/dropzone.min.css') }}" rel="stylesheet">
@@ -38,10 +38,10 @@
         <script src="{{ URL::asset('admin_assets/plugins/jquery/jquery-2.2.0.min.js') }}"></script>
         <script src="{{ URL::asset('admin_assets/plugins/materialize/js/materialize.js') }}"></script>
         <!-- <script src="{{ URL::asset('admin_assets/js/bootstrap.min.js') }}"></script> -->
-        <script src="{{ URL::asset('plugins/validator/dist/jquery.validate.js') }}"></script>
+        <script src="{{ URL::asset('admin_assets/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
         <script src="{{ URL::asset('admin_assets/js/site.js') }}"></script>
         <script src="{{ URL::asset('admin_assets/js/ajax.js') }}"></script>
-        <script src="{{ URL::asset('plugins/sweetalert2-7.17.0/dist/sweetalert2.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
         <script src="{{ URL::asset('admin_assets/plugins/ckeditor/ckeditor.js') }}"></script>
         <script src="{{ URL::asset('admin_assets/plugins/ckeditor/lang/ka.js') }}"></script>
         <script src="{{ URL::asset('admin_assets/plugins/ckeditor/config.js') }}"></script>
@@ -63,16 +63,17 @@
         <script src="{{ URL::asset('admin_assets/js/jszip.min.js') }}"></script>
         <script src="{{ URL::asset('admin_assets/js/jquery.countdown.min.js') }}"></script>
         <script src="{{ URL::asset('admin_assets/js/scrollbar.min.js') }}"></script>
-        <script src="{{ URL::asset('plugins/js/modernizr.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
-        <script src="{{ URL::asset('plugins/resizer/src/ResizeSensor.js') }}"></script>
-        <script src="{{ URL::asset('plugins/resizer/src/ElementQueries.js') }}"></script>
-        <script src="{{ URL::asset('plugins/synctranslit_0.0.7/js/jquery.synctranslit.min.js') }}"></script>
+        <script src="{{ URL::asset('admin_assets/js/ResizeSensor.js') }}"></script>
+        <script src="{{ URL::asset('admin_assets/js/ElementQueries.js') }}"></script>
+        <script src="{{ URL::asset('admin_assets/js/jquery.synctranslit.min.js') }}"></script>
+        <!-- <script src="{{ URL::asset('plugins/synctranslit_0.0.7/js/jquery.synctranslit.min.js') }}"></script> -->
 
 
 
        <!--  <script src="{{ URL::asset('resources/assets/js/require.js') }}"></script> -->
-        <script src="{{ URL::asset('resources/assets/js/app.js') }}"></script>
+        <!-- <script src="{{ URL::asset('resources/assets/js/app.js') }}"></script> -->
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK5VeEIALatoiino0zCd1gvCtSor9hanA&sensor=false&language=en&libraries=places" type="text/javascript"></script>
        <!--  <script src="{{ URL::asset('admin_assets/plugins/dropzone/dropzone-amd-module.min.js') }}"></script> -->
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

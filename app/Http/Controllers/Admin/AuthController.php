@@ -1,25 +1,29 @@
 <?php
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin; //admin add
 
+use App\Http\Controllers\Admin\AppController;
 use Auth;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-// use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Contracts\Auth\Guard;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Admin as User;
+use App\User;
+use App\Models\Region;
 use App\Role;
-use App\Http\Controllers\Controller;
-// use App\Jobs\SendMail;
+use App\Models\Country;
+use App\Models\CartModel;
+use App\Jobs\SendMail;
 use Illuminate\Http\Request;
 use Validator;
 use Mail;
 use Illuminate\Support\Facades\Redis;
-class AuthController extends Controller {
+class AuthController extends AppController {
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +36,7 @@ class AuthController extends Controller {
     |
     */
 
-    use ThrottlesLogins;
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
     protected $redirectPath = '/auth/login';
     protected $loginPath = '/dashboard';
 
@@ -43,11 +47,7 @@ class AuthController extends Controller {
      */
     public function __construct()
     {
-        $this->middleware('web', ['except' => 'postLogout']);
-    }
-
-    public function index() {
-        return view('admin.charts.index');
+        $this->middleware('api', ['except' => 'postLogout']);
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -13,12 +14,14 @@ use Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
 use App\Repositories\Eloquent\MediaRepository;
 use Validator;
-use App\Language;
-use App\Settings;
-use App\Text;
-use App\Page;
-use App\Gallery;
-use App\GalleryType;
+use App\Models\Language;
+use App\Models\Region;
+use App\Models\Product\Product;
+use App\Models\Settings\Settings;
+use App\Models\Text\Text;
+use App\Models\Page\Page;
+use App\Models\Gallery\Gallery;
+use App\Models\Gallery\GalleryType;
 
 class MediaController extends Controller {
 
@@ -38,7 +41,7 @@ class MediaController extends Controller {
      * @return void
      */
     public function __construct(MediaRepository $media) {
-        parent::__construct();
+       // parent::__construct();
         $this->media = $media;
     }
 
@@ -76,7 +79,7 @@ class MediaController extends Controller {
             $result = $this->media->attach_image_form($this->item, $data);
 
             if ($result['item']) {
-                $view = View::make($this->view_directory . '.parts.attach_images', $result)->render();
+                $view = view($this->view_directory . '.parts.attach_images', $result)->render();
                 return response()->json(['success' => true, 'status' => 1, 'message' => 'new content', 'html' => $view]);
             }
         }
@@ -103,7 +106,7 @@ class MediaController extends Controller {
             $result = $this->media->load_attached_images($this->item, $data);
 
             if ($result['item']) {
-                $view = View::make($this->view_directory . '.parts.selected_images', $result)->render();
+                $view = view($this->view_directory . '.parts.selected_images', $result)->render();
                 return response()->json(['success' => true, 'status' => 1, 'message' => '', 'html' => $view]);
             }
         }
@@ -118,7 +121,7 @@ class MediaController extends Controller {
 
             if ($result['status']) {
 
-                $view = View::make('media.gallery_items_select', $result)->render();
+                $view = view('admin.media.gallery_items_select', $result)->render();
                 return response()->json(['success' => true, 'status' => 1, 'message' => '', 'html' => $view]);
             }
         }

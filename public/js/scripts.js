@@ -102,10 +102,17 @@
 
 		//
 			$('.c-anchor').map((i, el) => {
-				let offset = $(el).position();
+				let offset = $(el).position(),
+					type = $(el).data('type'),
+					parent = $(el).closest('.anchored'),
+					p_margin = parent.css('margin-top').replace(/[^-\d\.]/g, '');
 
-				console.log(offset.top, $('header').innerHeight())
-				$(el).closest('.anchored').append('<div class="b-0 b-style" style="top: '+(offset.top - 87)+'px; height:'+$(el).innerHeight()+'px;"></div>');
+				if(parent.find('.inner-block').length !== 0 && parent.find('.inner-block').css('margin-top')) {
+					p_margin -= parent.find('.inner-block').css('margin-top').replace(/[^-\d\.]/g, '');
+				}
+
+				console.log($(el), el.offsetTop, offset)
+				parent.append('<div class="'+type+' b-style" style="top: '+(offset.top - p_margin)+'px; height:'+$(el).innerHeight()+'px;"></div>');
 
 				
 			});
